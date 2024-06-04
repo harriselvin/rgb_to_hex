@@ -27,27 +27,30 @@ function hex(num) {
 }
 
 function convert() {
+    if (inputRed.value == '') {
+        inputRed.value = 0
+    }
+     if (inputGreen.value == '') {
+        inputGreen.value = 0
+    }
+     if (inputBlue.value == '') {
+        inputBlue.value = 0
+    } 
+
     let red = parseInt(inputRed.value)
-    let redMod = inputRed.value % 16
     
     let green = parseInt(inputGreen.value)
-    let greenMod = inputGreen.value % 16
     
     let blue = parseInt(inputBlue.value)
-    let blueMod = inputBlue.value % 16
 
-    let r = (red <= 255 ? hex(red) : red) + hex(redMod)
-    let g = (green <= 255 ? hex(green) : green) + hex(greenMod)
-    let b = (blue <= 255 ? hex(blue) : blue) + hex(blueMod)
+    let redColor = red.toString(16).padStart(2, '0').toUpperCase();
+    let greenColor = green.toString(16).padStart(2, '0').toUpperCase();
+    let blueColor = blue.toString(16).padStart(2, '0').toUpperCase();
 
-    // let redColor = red.toString(16).padStart(2, '0').toUpperCase();
-    // let greenColor = green.toString(16).padStart(2, '0').toUpperCase();
-    // let blueColor = blue.toString(16).padStart(2, '0').toUpperCase();
-
-    textDisplay.innerText = `#${r + g + b}`
+    textDisplay.innerText = `#${redColor + greenColor + blueColor}`
 
     // Set background color of colorBox
-    colorBox.style.backgroundColor = `#${r}${g}${b}`
+    colorBox.style.backgroundColor = `#${redColor}${greenColor}${blueColor}`
 }
 
 function reset() {
@@ -56,6 +59,7 @@ function reset() {
     inputGreen.value = ""
     inputBlue.value = ""
     textDisplay.innerText = '#000000'
+    colorBox.style.backgroundColor = `black`
 }
 
 convertBtn.addEventListener('click', convert)

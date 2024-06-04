@@ -18,7 +18,7 @@ body {
 }
 
 .red-color .r {
-    background-color: red;
+    background-color: #FF0000;
     color: white;
     padding: 0 .2em;
     margin-right: .3em;
@@ -26,7 +26,7 @@ body {
 }
 
 .green-color .g {
-    background-color: green;
+    background-color: #00FF00;
     color: white;
     padding: 0 .2em;
     margin-right: .3em;
@@ -34,7 +34,7 @@ body {
 }
 
 .blue-color .b {
-    background-color: blue;
+    background-color: #0000FF;
     color: white;
     padding: 0 .2em;
     margin-right: .3em;
